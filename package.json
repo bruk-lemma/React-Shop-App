@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon back-end/server",
@@ -26,3 +27,4 @@
     "nodemon": "^2.0.19"
   }
 }
+ 
