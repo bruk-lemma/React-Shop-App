@@ -1,0 +1,24 @@
+{
+  "name": "react-shop-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon back-end/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bruk-lemma/React-Shop-App.git"
+  },
+  "author": "bruk-lemma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bruk-lemma/React-Shop-App/issues"
+  },
+  "homepage": "https://github.com/bruk-lemma/React-Shop-App#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
