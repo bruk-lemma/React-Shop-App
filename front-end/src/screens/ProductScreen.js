@@ -19,7 +19,7 @@ useEffect(()=>{
         setProducts(data)
     }
     fetchProduct()
-},[id])
+},[id]) 
 
     //const {id}=useParams();
     //const product=products.find((p)=> p._id ===id)
