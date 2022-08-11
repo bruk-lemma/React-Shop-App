@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon back-end/server",
     "client": "npm start --prefix front-end",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import":"node back-end/seeder",
+    "data:destroy":"node back-end/seeder -d"
   },
   "repository": {
     "type": "git",

@@ -8,7 +8,7 @@ const reviewSchema=mongoose.Schema({
  
 },{timestamps:true})
 
-
+ 
 const productSchema=mongoose.Schema({
     user:{
         type:mongoose.Schema.Types.ObjectId,
@@ -29,11 +29,11 @@ const productSchema=mongoose.Schema({
     },
     catagory:{
         type:String,
-        required:true,
+        //required:true,
     },
     description:{
         type:String,
-        required:true,
+        //required:true,
     },
     reviews:[reviewSchema],
     rating:{
