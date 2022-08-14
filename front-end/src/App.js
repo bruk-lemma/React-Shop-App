@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import HomePageScreen from './screens/HomePageScreen';
 import ProductScreen from './screens/ProductScreen';
 
+
 function App() {
   return (
 <Router>
