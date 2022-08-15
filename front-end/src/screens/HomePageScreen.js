@@ -5,6 +5,8 @@ import {Col, Row} from "react-bootstrap";
 import Product from "../components/Product";
 import {listProducts} from "../actions/productActions";
 //const axios=require('axios')
+import Loader from "../components/Loader";
+import Message from "../components/Message";
 
 const HomePageScreen = () => {
   const dispatch = useDispatch();
@@ -13,16 +15,16 @@ const HomePageScreen = () => {
   const {loading, error, products} = productList;
 
   useEffect(() => {
-    dispatch(listProducts());  
+    dispatch(listProducts());
   }, [dispatch]);
 
   return (
-    <> 
+    <>
       <h1>Latest Products</h1>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
-        <h3>{error}</h3>
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           {products.map((product) => (
