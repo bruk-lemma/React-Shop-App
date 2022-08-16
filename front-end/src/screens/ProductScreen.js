@@ -23,7 +23,7 @@ const ProductScreen = ({history, match}) => {
 
   useEffect(() => {
     dispatch(listProductDetails(id));
-  }, [dispatch, id]);
+  }, [dispatch, id, qty]);
   // history = useHistory();
 
   // history = useHistory();
