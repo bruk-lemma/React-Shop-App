@@ -9,7 +9,7 @@ export const authUser = asyncHandler(async (req, res) => {
 
   if (user && (await user.matchPassword(password))) {
     res.json({
-      _id: user.id,
+      _id: user._id,
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
@@ -18,5 +18,23 @@ export const authUser = asyncHandler(async (req, res) => {
   } else {
     res.status(401);
     throw new Error("invalid email or password");
+  }
+});
+
+export const getUserProfile = asyncHandler(async (req, res) => {
+  //res.send("user profile success...");
+  const user = await User.findById(req.user.id);
+
+  if (user) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    });
+    console.log("user data" + user);
+  } else {
+    res.status(404);
+    throw new Error("User not found...");
   }
 });
