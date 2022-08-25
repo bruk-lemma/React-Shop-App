@@ -22,12 +22,13 @@ export const login = (email, password) => async (dispatch) => {
       config
     );
     dispatch({type: USER_LOGIN_SUCCESS, payload: data});
-    localStorage.set("userInfo", JSON.stringify(data));
+    localStorage.setItem("userInfo", JSON.stringify(data));
+    console.log(data);
   } catch (error) {
     dispatch({
       type: USER_LOGIN_FAIL,
       payload:
-        error.respaonse && error.response.data.message
+        error.response && error.response.data.message
           ? error.response.data.message
           : error.message,
     });

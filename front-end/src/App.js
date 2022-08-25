@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import HomePageScreen from "./screens/HomePageScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
+import LoginScreen from "./screens/LoginScreen";
 //import {useHistory} from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<HomePageScreen />} />
             <Route path='/product/:id' element={<ProductScreen />} />
+            <Route path='/login' element={<LoginScreen />} />
             <Route path='/cart/:id' element={<CartScreen />} />
           </Routes>
         </Container>
