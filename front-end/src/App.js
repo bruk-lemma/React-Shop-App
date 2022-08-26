@@ -7,6 +7,7 @@ import HomePageScreen from "./screens/HomePageScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 //import {useHistory} from "react-router-dom";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route exact path='/' element={<HomePageScreen />} />
             <Route path='/product/:id' element={<ProductScreen />} />
             <Route path='/login' element={<LoginScreen />} />
+            <Route path='/register' element={<RegisterScreen />} />
             <Route path='/cart/:id' element={<CartScreen />} />
             <Route path='/cart' element={<CartScreen />} />
           </Routes>
