@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import Message from "../components/Message.js";
 import Loader from "../components/Loader.js";
 //import FormContainer from "../components/FormContainer.js";
-import {getUserDetails} from "../actions/userActions.js";
+import {getUserDetails, updateUserProfile} from "../actions/userActions.js";
 const ProfileScreen = ({location, navigate}) => {
   location = useLocation();
   navigate = useNavigate();
@@ -22,6 +22,9 @@ const ProfileScreen = ({location, navigate}) => {
   //navigate = useNavigate();
   const userLogin = useSelector((state) => state.userLogin);
   const {userInfo} = userLogin;
+
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
+  const {success} = userUpdateProfile;
 
   useEffect(() => {
     if (!userInfo) {
@@ -42,7 +45,7 @@ const ProfileScreen = ({location, navigate}) => {
     if (password !== confirmPassword) {
       setMessage("Password do not match");
     } else {
-      //dispatch(register(name, email, password));
+      dispatch(updateUserProfile({id: user._id, name, email, password}));
     }
   };
 
@@ -51,8 +54,8 @@ const ProfileScreen = ({location, navigate}) => {
       <Col md={3}>
         <h2>User Profile</h2>
         {message && <Message variant='danger'>{message}</Message>}
-
-        {error && <Message variant='danger'>{error}</Message>}
+        {message && <Message variant='danger'>{message}</Message>}
+        {success && <Message variant='success'>profile updated...</Message>}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId='name'>
